@@ -1,0 +1,17 @@
+﻿<Addin Type="Standard">
+	<!--
+		More information can be found on:
+		https://help.autodesk.com/view/INVNTOR/2022/ENU/?guid=GUID-52422162-1784-4E8F-B495-CDB7BE9987AB
+		
+		Use the GUID from the "StandardAddInServer" file for the
+		tags "ClassId" and "ClientId"
+	-->
+	<ClassId>{a7558ed7-8d2d-41bb-9295-4f3c9fe5d902}</ClassId>
+	<ClientId>{a7558ed7-8d2d-41bb-9295-4f3c9fe5d902}</ClientId>
+	<DisplayName>MyILogicAddin</DisplayName>
+	<Description>This is an example addin</Description>
+	<Assembly>MyILogicAddin.dll</Assembly>	
+	<SupportedSoftwareVersionGreaterThan>16..</SupportedSoftwareVersionGreaterThan>
+</Addin>
+
+
