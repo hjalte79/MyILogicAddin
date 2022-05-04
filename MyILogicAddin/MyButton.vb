@@ -18,9 +18,12 @@ Public Class MyButton
             CommandTypesEnum.kEditMaskCmdType,
             Guid.NewGuid().ToString(),
             "MyButton DescriptionText",
-            "MyButton ToolTipText")
+            "MyButton ToolTipText",)
+
         AddHandler _settingsButton.OnExecute, AddressOf MyButton_OnExecute
 
+        _settingsButton.StandardIcon = PictureDispConverter.ToIPictureDisp(My.Resources.MyImage16x16)
+        _settingsButton.LargeIcon = PictureDispConverter.ToIPictureDisp(My.Resources.MyImage32x32)
     End Sub
 
     Private Sub AddButtonDefinitionToRibbon()
