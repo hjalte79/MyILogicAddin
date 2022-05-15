@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MyILogicAddin", "MyILogicAddin\MyILogicAddin.vbproj", "{E91621A4-15DA-402B-A073-E4CB75F62C23}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MyDebugApp", "MyDebugApp\MyDebugApp.vbproj", "{389B46A7-AF7E-4DB3-94F3-A146916BF961}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E91621A4-15DA-402B-A073-E4CB75F62C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E91621A4-15DA-402B-A073-E4CB75F62C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E91621A4-15DA-402B-A073-E4CB75F62C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389B46A7-AF7E-4DB3-94F3-A146916BF961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389B46A7-AF7E-4DB3-94F3-A146916BF961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389B46A7-AF7E-4DB3-94F3-A146916BF961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389B46A7-AF7E-4DB3-94F3-A146916BF961}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
