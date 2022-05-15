@@ -4,10 +4,10 @@ Public Class ThisRule
     Inherits AbstractRule
 
     Private searchText As String
-    Private iLogicAddinGuid As String = "{3BDD8D79-2179-4B11-8A5A-257B1C0263AC}"
+    Private ReadOnly iLogicAddinGuid As String = "{3bdd8d79-2179-4b11-8a5a-257b1c0263ac}"
     Private iLogicAddin As ApplicationAddIn = Nothing
     Private iLogicAutomation = Nothing
-    Private outputFile As String = "c:\TEMP\seachedRules.txt"
+    Private ReadOnly outputFile As String = "c:\TEMP\seachedRules.txt"
 
     Sub Main()
         If (IO.File.Exists(outputFile)) Then
@@ -15,24 +15,23 @@ Public Class ThisRule
         End If
         searchText = InputBox("Text to search for", "Search")
 
-        iLogicAddin = ThisApplication.ApplicationAddIns.ItemById(
-            "{3bdd8d79-2179-4b11-8a5a-257b1c0263ac}")
+        iLogicAddin = ThisApplication.ApplicationAddIns.ItemById(iLogicAddinGuid)
         iLogicAutomation = iLogicAddin.Automation
         Dim doc As AssemblyDocument = ThisDoc.Document
 
-        searchDoc(doc)
+        SearchDoc(doc)
         For Each refDoc As Document In doc.AllReferencedDocuments
-            searchDoc(refDoc)
+            SearchDoc(refDoc)
         Next
 
         Process.Start("notepad.exe", outputFile)
     End Sub
 
-    Private Sub searchDoc(doc As Document)
+    Private Sub SearchDoc(doc As Document)
         Dim rules = iLogicAutomation.Rules(doc)
         If (rules Is Nothing) Then Return
         For Each rule In rules
-            Dim strReader As IO.StringReader = New IO.StringReader(rule.Text)
+            Dim strReader As New IO.StringReader(rule.Text)
             Dim i As Integer = 1
 
             Do While (True)
@@ -46,7 +45,7 @@ Public Class ThisRule
                         "Rule name: " & rule.Name & nl &
                         "line " & i & "  : " & line.Trim() & nl & nl)
                 End If
-                i = i + 1
+                i += 1
             Loop
         Next
     End Sub
