@@ -2,11 +2,19 @@
 Public Class MyButton
     Private _inventor As Inventor.Application
     Private _settingsButton As ButtonDefinition
+    Private _control As CommandControl
     Public Sub New(inventor As Inventor.Application)
         _inventor = inventor
 
         SetupButtonDefinition()
         AddButtonDefinitionToRibbon()
+    End Sub
+
+    Public Sub Unload()
+        _control.Delete()
+        _control = Nothing
+        _settingsButton.Delete()
+        _settingsButton = Nothing
     End Sub
 
     Private Sub SetupButtonDefinition()
@@ -31,7 +39,7 @@ Public Class MyButton
         Dim ribbon As Ribbon = _inventor.UserInterfaceManager.Ribbons.Item("Assembly")
         Dim ribbonTab As RibbonTab = ribbon.RibbonTabs.Item("id_TabManage")
         Dim ribbonPanel As RibbonPanel = ribbonTab.RibbonPanels.Item("iLogic.RibbonPanel")
-        ribbonPanel.CommandControls.AddButton(_settingsButton)
+        _control = ribbonPanel.CommandControls.AddButton(_settingsButton)
 
     End Sub
 

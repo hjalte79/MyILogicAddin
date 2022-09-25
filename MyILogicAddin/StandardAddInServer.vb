@@ -39,7 +39,8 @@ Public Class StandardAddInServer
     '''     AddIn should complete shutdown within this call.
     ''' </summary>
     Public Sub Deactivate() Implements ApplicationAddInServer.Deactivate
-
+        _myButton.Unload()
+        _myButton = Nothing
     End Sub
 
     ''' <summary>
