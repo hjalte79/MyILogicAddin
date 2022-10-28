@@ -1,6 +1,6 @@
 ﻿Imports Inventor
 Public Class MyButton
-    Private _inventor As Inventor.Application
+    Private ReadOnly _inventor As Inventor.Application
     Private _settingsButton As ButtonDefinition
     Private _control As CommandControl
     Public Sub New(inventor As Inventor.Application)
@@ -47,9 +47,8 @@ Public Class MyButton
 
         Try
 
-            Dim rule As New ThisRule()
-            rule.ThisApplication = _inventor
-            rule.Main()
+            Dim mySearchForm As New MySearchForm(_inventor)
+            mySearchForm.ShowDialog()
 
         Catch ex As Exception
 

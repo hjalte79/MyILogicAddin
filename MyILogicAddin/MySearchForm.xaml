@@ -1,0 +1,15 @@
+﻿<Window x:Class="MySearchForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyILogicAddin"
+        mc:Ignorable="d"
+        Title="MySearchForm" Height="309" Width="380">
+    <Grid>
+        <TextBox x:Name="TbSearchText" Height="22" Margin="10,10,114,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="BtnSearch" Click="BtnSearch_Click" Content="Search" HorizontalAlignment="Right" Height="22" Margin="0,10,10,0" VerticalAlignment="Top" Width="99"/>
+        <TextBox x:Name="TbResults" Margin="10,37,10,10" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"/>
+
+    </Grid>
+</Window>

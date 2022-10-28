@@ -7,9 +7,9 @@ Module Module1
     Sub Main()
         Dim inventorObject As Inventor.Application = Marshal.GetActiveObject("Inventor.Application")
 
-        Dim rule As New ThisRule()
-        rule.ThisApplication = inventorObject
-        rule.Main()
+        Dim mySearchForm As New MySearchForm(inventorObject)
+        mySearchForm.ShowDialog()
+
     End Sub
 
 End Module
