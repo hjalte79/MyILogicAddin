@@ -29,7 +29,11 @@ Public Class StandardAddInServer
         Catch ex As Exception
 
             ' Show a message if any thing goes wrong.
-            MessageBox.Show(ex.Message)
+            MessageBox.Show($"{ex.Message}{System.Environment.NewLine}{System.Environment.NewLine} {ex.StackTrace}")
+
+            If (ex.InnerException IsNot Nothing) Then
+                MessageBox.Show($"Inner exception message: {ex.InnerException.Message}")
+            End If
 
         End Try
     End Sub
