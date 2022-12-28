@@ -26,6 +26,8 @@ Public Class StandardAddInServer
             ' initialize the rule class
             _myButton = New MyButton(AddInSiteObject.Application)
 
+            ' initialize the dockable window
+            CreateDockableWindow(AddInSiteObject.Application)
         Catch ex As Exception
 
             ' Show a message if any thing goes wrong.
@@ -63,4 +65,16 @@ Public Class StandardAddInServer
             Throw New NotImplementedException()
         End Get
     End Property
+
+    Private Sub CreateDockableWindow(inventor As Inventor.Application)
+        Dim mySearchForm As New MySearchForm(inventor)
+
+        Dim userInterfaceMgr As UserInterfaceManager = inventor.UserInterfaceManager
+        Dim dockableWindow = userInterfaceMgr.DockableWindows.Add(
+            Guid.NewGuid().ToString(),
+            "MyDockableWindow InternalName",
+            "My dockable window")
+
+        DockableWindowChildAdapter.AddWPFWindow(dockableWindow, mySearchForm)
+    End Sub
 End Class

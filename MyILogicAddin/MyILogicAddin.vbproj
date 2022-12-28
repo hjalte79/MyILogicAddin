@@ -84,6 +84,7 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DockableWindowChildAdapter.vb" />
     <Compile Include="MyButton.vb" />
     <Compile Include="MySearchForm.xaml.vb">
       <DependentUpon>MySearchForm.xaml</DependentUpon>
